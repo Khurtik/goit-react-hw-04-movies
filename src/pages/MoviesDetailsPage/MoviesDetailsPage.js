@@ -18,6 +18,7 @@ class MoviesDetailsPage extends Component {
     }).isRequired,
     history: PropTypes.shape({
       push: PropTypes.func,
+      goBack: PropTypes.func,
     }).isRequired,
     location: PropTypes.shape({
       state: PropTypes.shape({
@@ -41,20 +42,8 @@ class MoviesDetailsPage extends Component {
   }
 
   onGoback = () => {
-    const { state } = this.props.location;
-    const { search } = this.state;
-
-    if (state) {
-      this.props.history.push(state.from);
-      return;
-    }
-
-    this.props.history.push({
-      pathname: '/',
-      search: `?movies=${search}`,
-    });
-    // const { history } = this.props;
-    // history.push('/');
+    const { history } = this.props;
+    history.goBack();
   };
 
   render() {
@@ -75,12 +64,14 @@ class MoviesDetailsPage extends Component {
 
           <NavLink
             activeStyle={{ color: 'red', textDecoration: 'none' }}
+            replace
             to={`${match.url}/cast`}
           >
             <span className={styles.titleCast}>Cast</span>
           </NavLink>
           <NavLink
             activeStyle={{ color: 'red', textDecoration: 'none' }}
+            replace
             to={`${match.url}/reviews`}
           >
             <span className={styles.titleReviews}> Reviews</span>
