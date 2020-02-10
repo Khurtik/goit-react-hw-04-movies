@@ -1,0 +1,13 @@
+.castList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.castImg {
+  background-image: url(https://admiring-davinci-865a7c.netlify.com/static/media/person.508296a9.png);
+  display: block;
+  width: 300px;
+  height: 400px;
+}

@@ -1,0 +1,16 @@
+.moviesList {
+  list-style-type: circle;
+  font-family: serif;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.moviesItem {
+  text-decoration: none;
+  color: rgb(34, 58, 194);
+}
+
+.moviesItem:hover {
+  color: rgb(44, 23, 94);
+}
